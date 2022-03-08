@@ -869,7 +869,7 @@ age *= 10; // 相当于 age = age * 10;
 
   - 执行流程
 
-    ![](/images/day2.images/图片14.png)
+    ![](images/day2.images/图片14.png)
 
 - if else语句（双分支语句）
 
