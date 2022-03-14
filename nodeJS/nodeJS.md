@@ -1606,7 +1606,7 @@ nodemon app.js
 
 #### 2.1.2**现实生活中的路由**
 
-![](\images\02express\2022-03-12_210502.png)
+![](images\02express\2022-03-12_210502.png)
 
 按键 1 -> 业务查询
 
@@ -1655,7 +1655,7 @@ app.post('/', (req, res) => {
 
 在匹配时，会按照路由的顺序进行匹配，如果请求类型和请求的 URL 同时匹配成功，则 Express 会将这次请求，转交给对应的 function 函数进行处理。
 
-![](\images\02express\2022-03-12_211139.png)
+![](images\02express\2022-03-12_211139.png)
 
 路由匹配的注意点：
 
@@ -1750,7 +1750,7 @@ app.use('/api', router)
 
 在处理污水的时候，一般都要经过三个处理环节，从而保证处理过后的废水，达到排放标准。
 
-![](\images\02express\2022-03-12_212947.png)
+![](images\02express\2022-03-12_212947.png)
 
 处理污水的这三个中间处理环节，就可以叫做中间件。
 
@@ -1758,13 +1758,13 @@ app.use('/api', router)
 
 当一个请求到达 Express 的服务器之后，可以连续调用多个中间件，从而对这次请求进行预处理。
 
-![](\images\02express\2022-03-12_213044.png)
+![](images\02express\2022-03-12_213044.png)
 
 ### 4.1.4**Express** **中间件的格式**
 
 Express 的中间件，本质上就是一个 **function** **处理函数**，Express 中间件的格式如下：
 
-![](\images\02express\2022-03-12_213139.png)
+![](images\02express\2022-03-12_213139.png)
 
 注意：中间件函数的形参列表中，必须包含 next 参数。而路由处理函数中只包含 req 和 res。
 
@@ -1772,7 +1772,7 @@ Express 的中间件，本质上就是一个 **function** **处理函数**，Exp
 
 **next** **函数**是实现多个中间件连续调用的关键，它表示把流转关系转交给下一个中间件或路由。
 
-![](\images\02express\2022-03-12_213227.png)
+![](images\02express\2022-03-12_213227.png)
 
 ### 4.1.6**定义中间件函数**
 
@@ -1824,7 +1824,7 @@ app.use((req, res, next) => {
 
 ​	多个中间件之间，**共享同一份** **req** **和** **res**。基于这样的特性，我们可以在上游的中间件中，**统一**为 req 或 res 对象添加自定义的属性或方法，供下游的中间件或路由进行使用。
 
-![](\images\02express\2022-03-12_213919.png)
+![](images\02express\2022-03-12_213919.png)
 
 ### 1.1.10**定义多个全局中间件**
 
@@ -2227,7 +2227,7 @@ cors 是 Express 的一个第三方中间件。通过安装和配置 cors 中间
 
 浏览器的同源安全策略默认会阻止网页“跨域”获取资源。但如果接口服务器配置了 CORS 相关的 HTTP 响应头，就可以解除浏览器端的跨域访问限制。
 
-![](\images\02express\2022-03-12_221412.png)
+![](images\02express\2022-03-12_221412.png)
 
 ### 2.1.3**CORS** **的注意事项**
 
@@ -2423,7 +2423,7 @@ app . get('/api/jsonp', (req, res) => {
 
 数据的组织结构：指的就是数据以什么样的结构进行存储。
 
-<img src="\images\03MySQL\2022-03-12_223811.png" style="zoom:75%;" />
+<img src="images\03MySQL\2022-03-12_223811.png" style="zoom:75%;" />
 
 传统型数据库的数据组织结构，与 Excel 中数据的组织结构比较类似。因此，我们可以对比着 Excel 来了解和学习传统型数据库的数据组织结构。
 
@@ -2433,7 +2433,7 @@ app . get('/api/jsonp', (req, res) => {
 
 每个 Excel 中，数据的组织结构分别为工作簿、工作表、数据行、列这 4 大部分组成。
 
-<img src="L:\学习笔记\study-notes\nodeJS\images\03MySQL\2022-03-12_223957.png" style="zoom:75%;" />
+<img src="images\03MySQL\2022-03-12_223957.png" style="zoom:75%;" />
 
 1. 整个 Excel 叫做工作簿
 2. users 和 books 是工作表
@@ -2490,19 +2490,19 @@ MySQL Workbench：可视化的 MySQL 管理工具，通过它，可以方便的�
 
 ### 4.1.1**连接数据库**
 
-![](\images\03MySQL\2022-03-12_224701.png)
+![](images\03MySQL\2022-03-12_224701.png)
 
 ### 4.1.2**了解主界面的组成部分**
 
-![](\images\03MySQL\2022-03-12_224819.png)
+![](images\03MySQL\2022-03-12_224819.png)
 
 ### 4.1.3**创建数据库**
 
-![](\images\03MySQL\2022-03-12_224944.png)
+![](images\03MySQL\2022-03-12_224944.png)
 
 ### 4.1.4**创建数据表**
 
-![](\images\03MySQL\2022-03-12_225036.png)
+![](images\03MySQL\2022-03-12_225036.png)
 
 DataType 数据类型：
 
@@ -2524,7 +2524,7 @@ DataType 数据类型：
 
 ### 4.1.5**向表中写入数据**
 
-![](\images\03MySQL\2022-03-12_225124.png)
+![](images\03MySQL\2022-03-12_225124.png)
 
 # 5、使用 SQL 管理数据库
 
@@ -2677,11 +2677,11 @@ DELETE FROM表名称WHERE列运算符值
 
 ## 5.9SQL 的 WHERE 子句
 
-### 5.9.1**可在** **WHERE** **子句中使用的****运算符**
+### 5.9.1**可在** **WHERE** **子句中使用的**运算符
 
 下面的运算符可在 WHERE 子句中使用，用来限定选择的标准：
 
-![](L:\学习笔记\study-notes\nodeJS\images\03MySQL\2022-03-12_231118.png)
+![](images\03MySQL\2022-03-12_231118.png)
 
 注意：在某些版本的 SQL 中，操作符 <> 可以写为 !=
 
@@ -2707,12 +2707,681 @@ select * from users where username!='ls'
 
 - OR 表示只要满足任意一个条件即可，相当于 JavaScript 中的 || 运算符，例如 if(a !== 10 || a !== 20)
 
-### 5.10.1**AND** **运算符****示例**
+### 5.10.1**AND** **运算符示例**
 
 使用 AND 来显示所有 status 为 0，并且 id 小于 3 的用户：
 
 ```sql
 -- 使用 AND 来显示所有状态为0且id小于3的用户
 select * from users where status=0 and id<3
+```
+
+### 5.10.2**OR** **运算符**示例
+
+使用 OR 来显示所有 status 为 1，或者 username 为 zs 的用户：
+
+```sql
+-- 使用 or 来显示所有状态为1 或 username 为 zs 的用户
+select * from users where status=1 or username='zs'
+```
+
+## 5.11SQL 的 ORDER BY 子句
+
+**语法**
+
+- ORDER BY 语句用于根据指定的列对结果集进行排序。
+
+- ORDER BY 语句**默认**按照升序对记录进行排序。
+
+- 如果您希望按照**降序**对记录进行排序，可以使用 DESC 关键字。
+
+### 5.11.1**ORDER BY** **子句** **-** **升序排序**
+
+对 users 表中的数据，按照 status 字段进行升序排序，示例如下：
+
+```sql
+-- 对users表中的数据，按照 status 字段进行升序排序
+select * from users order by status
+```
+
+### 5.11.2**ORDER BY** **子句** **–** **降序排序**
+
+对 users 表中的数据，按照 id 字段进行降序排序，示例如下：
+
+```sql
+-- 按照 id 对结果进行降序的排序  desc 表示降序排序   asc 表示升序排序（默认情况下，就是升序排序的）
+select * from users order by id desc
+```
+
+### 5.11.3**ORDER BY** **子句** **–** **多重排序**
+
+对 users 表中的数据，先按照 status 字段进行降序排序，再按照 username 的字母顺序，进行升序排序，示例如下：
+
+```sql
+-- 对 users 表中的数据，先按照 status 进行降序排序，再按照 username 字母的顺序，进行升序的排序
+select * from users order by status desc, username asc
+```
+
+## 5.12SQL 的 COUNT(*) 函数
+
+**语法**
+
+COUNT(*) 函数用于返回查询结果的总数据条数，语法格式如下：
+
+```sql
+select count(*) from 表名
+```
+
+### 5.12.1**COUNT(\*)** **示例**
+
+查询 users 表中 status 为 0 的总数据条数：
+
+```sql
+--使用 count(*) 来统计 users 表中，状态为 0 用户的总数量
+select count(*) from users where status=0
+```
+
+### 5.13**使用** **AS** **为列****设置别名**
+
+如果希望给查询出来的列名称设置别名，可以使用 AS 关键字，示例如下：
+
+```sql
+-- 使用 AS 关键字给列起别名
+select count(*) as total from users where status=0
+select username as uname, password as upwd from users
+```
+
+# 6、在项目中操作 MySQL
+
+## 6.1在项目中操作数据库的步骤
+
+1. 安装操作 MySQL 数据库的第三方模块（mysql）
+2. 通过 mysql 模块连接到 MySQL 数据库
+3. 通过 mysql 模块执行 SQL 语句
+
+![](images\03MySQL\2022-03-13_214233.png)
+
+## 6.2 安装与配置 mysql 模块
+
+### 6.2.1 **安装** **mysql** **模块**
+
+mysql 模块是托管于 npm 上的第三方模块。它提供了在 Node.js 项目中连接和操作 MySQL 数据库的能力。
+
+想要在项目中使用它，需要先运行如下命令，将 mysql 安装为项目的依赖包：
+
+```js
+npm install mysql
+```
+
+### **6.2.2** **配置** **mysql** **模块**
+
+在使用 mysql 模块操作 MySQL 数据库之前，必须先对 mysql 模块进行必要的配置，主要的配置步骤如下：
+
+```js
+// 1. 导入 mysql 模块
+const mysql = require('mysql')
+// 2. 建立与 MySQL 数据库的连接关系
+const db = mysql.createPool({
+  host: '127.0.0.1', // 数据库的 IP 地址
+  user: 'root', // 登录数据库的账号
+  password: 'admin123', // 登录数据库的密码
+  database: 'my_db_01', // 指定要操作哪个数据库
+})
+```
+
+### 6.2.3**测试** **mysql** **模块能否正常工作**
+
+调用 db.query() 函数，指定要执行的 SQL 语句，通过回调函数拿到执行的结果：
+
+```js
+// 测试 mysql 模块能否正常工作
+db.query('select 1', (err, results) => {
+  // mysql 模块工作期间报错了
+  if(err) return console.log(err.message)
+  // 能够成功的执行 SQL 语句
+  console.log(results)
+}) 
+```
+
+## **6.3使用** **mysql** **模块操作** **MySQL** **数据库**
+
+### 6.3.1 **查询数据**
+
+查询 users 表中所有的数据：
+
+```js
+// 查询 users 表中所有的数据
+const sqlStr = 'select * from users'
+db.query(sqlStr, (err, results) => {
+  // 查询数据失败
+  if (err) return console.log(err.message)
+  // 查询数据成功
+  // 注意：如果执行的是 select 查询语句，则执行的结果是数组
+  console.log(results)
+}) 
+```
+
+### 6.3.2**插入数据**
+
+向 users 表中新增数据， 其中 username 为 Spider-Man，password 为 pcc321。示例代码如下：
+
+```js
+
+// 向 users 表中，新增一条数据，其中 username 的值为 Spider-Man，password 的值为 pcc123
+const user = { username: 'Spider-Man', password: 'pcc123' }
+// 定义待执行的 SQL 语句
+const sqlStr = 'insert into users (username, password) values (?, ?)'
+// 执行 SQL 语句
+db.query(sqlStr, [user.username, user.password], (err, results) => {
+  // 执行 SQL 语句失败了
+  if (err) return console.log(err.message)
+  // 成功了
+  // 注意：如果执行的是 insert into 插入语句，则 results 是一个对象
+  // 可以通过 affectedRows 属性，来判断是否插入数据成功
+  if (results.affectedRows === 1) {
+    console.log('插入数据成功!')
+  }
+}) 
+```
+
+### 6.3.3**插入数据的便捷方式**
+
+向表中新增数据时，如果数据对象的每个属性和数据表的字段**一一对应**，则可以通过如下方式快速插入数据：
+
+```js
+// 演示插入数据的便捷方式
+const user = { username: 'Spider-Man2', password: 'pcc4321' }
+// 定义待执行的 SQL 语句
+const sqlStr = 'insert into users set ?'
+// 执行 SQL 语句
+db.query(sqlStr, user, (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('插入数据成功')
+  }
+}) 
+```
+
+### 6.3.4**更新数据**
+
+可以通过如下方式，更新表中的数据：
+
+```js
+// 演示如何更新用户的信息
+const user = { id: 6, username: 'aaa', password: '000' }
+// 定义 SQL 语句
+const sqlStr = 'update users set username=?, password=? where id=?'
+// 执行 SQL 语句
+db.query(sqlStr, [user.username, user.password, user.id], (err, results) => {
+  if (err) return console.log(err.message)
+  // 注意：执行了 update 语句之后，执行的结果，也是一个对象，可以通过 affectedRows 判断是否更新成功
+  if (results.affectedRows === 1) {
+    console.log('更新成功')
+  }
+}) 
+```
+
+### 6.3.5**更新数据的****便捷方式**
+
+更新表数据时，如果数据对象的每个属性和数据表的字段**一一对应**，则可以通过如下方式快速更新表数据：
+
+```js
+// 演示更新数据的便捷方式
+const user = { id: 6, username: 'aaaa', password: '0000' }
+// 定义 SQL 语句
+const sqlStr = 'update users set ? where id=?'
+// 执行 SQL 语句
+db.query(sqlStr, [user, user.id], (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('更新数据成功')
+  }
+}) 
+```
+
+### 6.3.7**删除数据**
+
+在删除数据时，推荐根据 id 这样的唯一标识，来删除对应的数据。示例如下：
+
+```js
+// 删除 id 为 5 的用户
+const sqlStr = 'delete from users where id=?'
+db.query(sqlStr, 5, (err, results) => {
+  if (err) return console.log(err.message)
+  // 注意：执行 delete 语句之后，结果也是一个对象，也会包含 affectedRows 属性
+  if (results.affectedRows === 1) {
+    console.log('删除数据成功')
+  }
+}) 
+```
+
+### 5.3.8**标记删除**
+
+使用 DELETE 语句，会把真正的把数据从表中删除掉。为了保险起见，**推荐使用**标记删除的形式，来**模拟删除的动作**。
+
+所谓的标记删除，就是在表中设置类似于 **status** 这样的**状态字段**，来**标记**当前这条数据是否被删除。
+
+当用户执行了删除的动作时，我们并没有执行 DELETE 语句把数据删除掉，而是执行了 UPDATE 语句，将这条数据对应的 status 字段标记为删除即可。
+
+```js
+// 标记删除
+const sqlStr = 'update users set status=? where id=?'
+db.query(sqlStr, [1, 6], (err, results) => {
+  if (err) return console.log(err.message)
+  if (results.affectedRows === 1) {
+    console.log('标记删除成功')
+  }
+})
+```
+
+# 7、前后端的身份认证
+
+## 7.1Web 开发模式
+
+目前主流的 Web 开发模式有两种，分别是：
+
+1. 基于服务端渲染的传统 Web 开发模式
+2. 基于前后端分离的新型 Web 开发模式
+
+### **7.1.1** **服务端渲染的** **Web** **开发模式**
+
+​	服务端渲染的概念：服务器发送给客户端的 HTML 页面，是在服务器通过字符串的拼接，动态生成的。因此，客户端不需要使用 Ajax 这样的技术额外请求页面的数据。代码示例如下：
+
+```js
+ app . get(' /index.html', (req, res) => {
+     // 1.要渲染的数据
+    const user = { name: 'zs', age: 20 }
+
+     //2.服务器端通过字符串的拼接，动态生成HTML 内容
+
+    const html =、 <h1>姓名: ${user .name},年龄: ${user .age}</h1>
+     /1 3.把生成好的页面内容响应给客户端。因此，客户端拿到的是带有真实数据的HTML页面
+     res. send(html )
+})
+
+```
+
+### 7.1.2**服务端渲染的优缺点**
+
+**优点**：
+
+1.  **前端耗时少。**因为服务器端负责动态生成 HTML 内容，浏览器只需要直接渲染页面即可。尤其是移动端，更省电。
+2.  **有利于SEO。**因为服务器端响应的是完整的 HTML 页面内容，所以爬虫更容易爬取获得信息，更有利于 SEO。
+
+**缺点：**
+
+1.  **占用服务器端资源。**即服务器端完成 HTML 页面内容的拼接，如果请求较多，会对服务器造成一定的访问压力。
+2. **不利于前后端分离，开发效率低。**使用服务器端渲染，则**无法进行分工合作**，尤其对于**前端复杂度高**的项目，不利于项目高效开发。
+
+### 7.1.3 **前后端分离的** **Web** **开发模式**
+
+​	前后端分离的概念：前后端分离的开发模式，**依赖于** **Ajax** **技术的广泛应用**。简而言之，前后端分离的 Web 开发模式，就是**后端只负责提供** **API** **接口，前端使用** **Ajax** **调用接口**的开发模式。
+
+### **7.1.4** **前后端分离的优缺点**
+
+**优点：**
+
+1.  **开发体验好。**前端专注于 UI 页面的开发，后端专注于api 的开发，且前端有更多的选择性。
+2. **用户体验好。**Ajax 技术的广泛应用，极大的提高了用户的体验，可以轻松实现页面的局部刷新。
+3.  **减轻了服务器端的渲染压力。**因为页面最终是在每个用户的浏览器中生成的。
+
+**缺点：**
+
+1.  **不利于** **SEO**。**因为完整的 HTML 页面需要在客户端动态拼接完成，所以爬虫对无法爬取页面的有效信息。（解决方案：利用 Vue、React 等前端框架的 **SSR （server side render）技术能够很好的解决 SEO 问题！）
+
+### 7.1.5**如何选择** **Web** **开发模式**
+
+**不谈业务场景而盲目选择使用何种开发模式都是耍流氓。**
+
+- 比如企业级网站，主要功能是展示而没有复杂的交互，并且需要良好的 SEO，则这时我们就需要使用服务器端渲染；
+
+- l而类似后台管理项目，交互性比较强，不需要考虑 SEO，那么就可以使用前后端分离的开发模式。
+
+​	另外，具体使用何种开发模式并不是绝对的，为了**同时兼顾**了**首页的渲染速度**和**前后端分离的开发效率**，一些网站采用了首屏服务器端渲染 + 其他页面前后端分离的开发模式。
+
+## 7.2身份认证
+
+### 7.2.1**什么是身份认证**
+
+**身份认证**（Authentication）又称“身份验证”、“鉴权”，是指**通过一定的手段，完成对用户身份的确认**。
+
+- 日常生活中的身份认证随处可见，例如：高铁的验票乘车，手机的密码或指纹解锁，支付宝或微信的支付密码等。
+- 在 Web 开发中，也涉及到用户身份的认证，例如：各大网站的**手机验证码登录**、**邮箱密码登录**、**二维码登录**等。
+
+### **7.2.2** **为什么需要身份认证**
+
+- 身份认证的目的，是为了**确认当前所声称为某种身份的用户，确实是所声称的用户**。
+
+例如，你去找快递员取快递，你要怎么证明这份快递是你的。
+
+- 在互联网项目开发中，如何对用户的身份进行认证，是一个值得深入探讨的问题。
+
+例如，如何才能保证网站不会错误的将“马云的存款数额”显示到“马化腾的账户”上。
+
+### 7.2.3**不同开发模式下的身份认证**
+
+对于服务端渲染和前后端分离这两种开发模式来说，分别有着不同的身份认证方案：
+
+1.  服务端渲染推荐使用 **Session** **认证机制**
+2.  前后端分离推荐使用 **JWT** **认证机制**
+
+## 7.3Session 认证机制
+
+### 7.3.1**HTTP** **协议的无状态性**
+
+了解 HTTP 协议的无状态性是进一步学习 Session 认证机制的必要前提。
+
+HTTP 协议的无状态性，指的是客户端**的每次** **HTTP** **请求都是独立的**，连续多个请求之间没有直接的关系，**服务器不会主动保留每次** **HTTP** **请求的状态**。
+
+![](images\03MySQL\2022-03-13_220345.png)
+
+### 7.3.2**如何突破** **HTTP** **无状态的限制**
+
+对于超市来说，为了方便收银员在进行结算时给 VIP 用户打折，超市可以为每个 VIP 用户发放会员卡。
+
+![](images\03MySQL\2022-03-13_220431.png)
+
+注意：现实生活中的**会员卡身份认证方式**，在 Web 开发中的专业术语叫做 **Cookie**。
+
+### 7.3.3**什么是** **Cookie**
+
+​	Cookie 是**存储在用户浏览器中的一段不超过** **4 KB** **的字符串**。它由一个名称（Name）、一个值（Value）和其它几个用于控制 Cookie 有效期、安全性、使用范围的可选属性组成。
+
+不同域名下的 Cookie 各自独立，每当客户端发起请求时，会**自动**把**当前域名下**所有**未过期的** **Cookie** 一同发送到服务器。
+
+**Cookie的几大特性：**
+
+1. 自动发送
+2. 域名独立
+3. 过期时限
+4. 4KB 限制
+
+### 7.3.4**Cookie** **在身份认证中的作用**
+
+​	客户端第一次请求服务器的时候，服务器**通过响应头的形式**，向客户端发送一个身份认证的 Cookie，客户端会自动将 Cookie 保存在浏览器中。
+
+随后，当客户端浏览器每次请求服务器的时候，浏览器会**自动**将身份认证相关的 Cookie，**通过请求头的形式**发送给服务器，服务器即可验明客户端的身份。
+
+![](images\03MySQL\2022-03-13_220654.png)
+
+### 7.3.5**Cookie** **不具有**安全性
+
+​	由于 Cookie 是存储在浏览器中的，而且**浏览器也提供了读写** **Cookie** **的** **API**，因此 **Cookie** **很容易被伪造**，不具有安全性。因此不建议服务器将重要的隐私数据，通过 Cookie 的形式发送给浏览器。
+
+![](images\03MySQL\2022-03-13_220719.png)
+
+**注意：千万不要使用** **Cookie** **存储重要且隐私的数据**！比如用户的身份信息、密码等。
+
+### 7.3.6**提高身份认证的安全性**
+
+​	为了防止客户伪造会员卡，收银员在拿到客户出示的会员卡之后，可以**在收银机上进行刷卡认证**。只有收银机确认存在的会员卡，才能被正常使用。
+
+这种“**会员卡** **+** **刷卡认证**”的设计理念，就是 Session 认证机制的精髓。
+
+![](images\03MySQL\2022-03-13_220918.png)
+
+### **7.3.7Session** **的工作原理**
+
+![](images\03MySQL\2022-03-13_220940.png)
+
+## 7.4在 Express 中使用 Session 认证
+
+### 7.4.1**安装** **express-session** **中间件**
+
+在 Express 项目中，只需要安装 express-session 中间件，即可在项目中使用 Session 认证：
+
+```js
+npm install express-session
+```
+
+### 7.4.2**配置** **express-session** **中间件**
+
+express-session 中间件安装成功后，需要通过 app.use() 来注册 session 中间件，示例代码如下：
+
+```js
+//导入session中间件
+const session = require('express-session')、
+//配置session中间件
+app.use(
+  session({
+    secret: 'wenyuStu',
+    resave: false,
+    saveUninitialized: true,
+  })
+)
+```
+
+### 7.4.3向 **session** **中存数据**
+
+当 express-session 中间件配置成功后，即可通过 **req.session** 来访问和使用 session 对象，从而存储用户的关键信息：
+
+```js
+// 登录的 API 接口
+app.post('/api/login', (req, res) => {
+  // 判断用户提交的登录信息是否正确
+  if (req.body.username !== 'admin' || req.body.password !== '000000') {
+    return res.send({ status: 1, msg: '登录失败' })
+  }
+  // TODO_02：请将登录成功后的用户信息，保存到 Session 中
+  // 注意：只有成功配置了 express-session 这个中间件之后，才能够通过 req 点出来 session 这个属性
+  req.session.user = req.body // 用户的信息
+  req.session.islogin = true // 用户的登录状态
+
+  res.send({ status: 0, msg: '登录成功' })
+})
+```
+
+### 7.4.4**从** **session** 中**取数据**
+
+可以直接从 **req.session** 对象上获取之前存储的数据，示例代码如下：
+
+```js
+// 获取用户姓名的接口
+app.get('/api/username', (req, res) => {
+  // TODO_03：请从 Session 中获取用户的名称，响应给客户端
+  if (!req.session.islogin) {
+    return res.send({ status: 1, msg: 'fail' })
+  }
+  res.send({
+    status: 0,
+    msg: 'success',
+    username: req.session.user.username,
+  })
+})
+```
+
+### 7.4.5**清空** **session**
+
+调用 **req.session.destroy**()函数，即可清空服务器保存的 session 信息。
+
+```js
+// 退出登录的接口
+app.post('/api/logout', (req, res) => {
+  // TODO_04：清空 Session 信息
+  req.session.destroy()
+  res.send({
+    status: 0,
+    msg: '退出登录成功',
+  })
+})
+```
+
+## 7.5JWT 认证机制
+
+### 7.5.1**了解** **Session** **认证的局限性**
+
+​	Session 认证机制需要配合 Cookie 才能实现。由于 Cookie 默认不支持跨域访问，所以，当涉及到前端跨域请求后端接口的时候，**需要做很多额外的配置**，才能实现跨域 Session 认证。
+
+**注意：**
+
+- 当前端请求后端接口**不存在跨域问题**的时候，**推荐使用** **Session** 身份认证机制。
+- 当前端需要跨域请求后端接口的时候，不推荐使用 Session 身份认证机制，推荐使用 JWT 认证机制。
+
+### 7.5.2**什么是** **JWT**
+
+JWT（英文全称：JSON Web Token）是目前**最流行**的**跨域认证解决方案**。
+
+### **7.5.3 JWT** **的工作原理**
+
+总结：用户的信息通过 Token 字符串的形式，保存在客户端浏览器中。服务器通过还原 Token 字符串的形式来认证用户的身份。
+
+![](images\03MySQL\2022-03-13_222038.png)
+
+### 7.5.4 **JWT** **的组成部分**
+
+JWT 通常由三部分组成，分别是 Header（头部）、Payload（有效荷载）、Signature（签名）。
+
+三者之间使用英文的“.”分隔，格式如下：
+
+```js
+Header.Payload. Signature
+```
+
+下面是 JWT 字符串的示例：
+
+```js
+eyJhbGc 101 JIU2I 1Ni IsInRSCCI6Ikpxvc J9. ey JpZC I6MSwidXNIcm5hbMUi0i JhZG1pbi Is InBhc3N3b3JkIjoiIiwibmlja25 
+hbMU101L ms6Xlt7Tlt7QiLCJ1bWFpbCI6Im5pYmF 1YUBpdGNhC3QUY24ILC J1 c2VyX3BpYyI6IiIs ImIhdCIGMTU30DAZNjY4Miw
+1ZXhwI joxNTC4MDCyNjeyfQ. Mwq7GqCx JPK EALNr tMG041 IKdZ33S9KBL3XeuBxuI 
+```
+
+### **7.5.6 JWT** 的三个部分各自代表的含义
+
+JWT 的三个组成部分，从前到后分别是 Header、Payload、Signature。
+
+其中：
+
+- **Payload** 部分**才是真正的用户信息**，它是用户信息经过加密之后生成的字符串。
+- Header 和 Signature 是**安全性相关**的部分，只是为了保证 Token 的安全性。
+
+![](images\03MySQL\2022-03-13_222439.png)
+
+### 7.5.7**JWT** **的使用方式**
+
+客户端收到服务器返回的 JWT 之后，通常会将它储存在 localStorage 或 sessionStorage 中。
+
+​	此后，客户端每次与服务器通信，都要带上这个 JWT 的字符串，从而进行身份认证。推荐的做法是**把** **JWT** **放在** **HTTP** **请求头的** **Authorization** **字段中**，格式如下：
+
+```js
+Authorization: Bearer <token>
+```
+
+## 7.6在 Express 中使用 JWT
+
+### 7.6.1**安装** **JWT** **相关的包**
+
+运行如下命令，安装如下两个 JWT 相关的包：
+
+```js
+npm install jsonwebtoken express-jwt
+```
+
+其中：
+
+1. **jsonwebtoken** 用于**生成** **JWT** **字符串**
+2. **express-jwt** 用于**将** **JWT** **字符串解析还原成** **JSON** **对象**
+
+### **7.6.2** **导入** **JWT** **相关的包**
+
+使用 **require()** 函数，分别导入 JWT 相关的两个包：
+
+```js
+//安装并导入 JWT 相关的两个包，分别是 jsonwebtoken 和 express-jwt
+const jwt = require('jsonwebtoken')
+const expressJWT = require('express-jwt')
+```
+
+### 7.6.3**定义** **secret** **密钥**
+
+为了保证 JWT 字符串的安全性，防止 JWT 字符串在网络传输过程中被别人破解，我们需要专门定义一个用于**加密**和**解密**的 secret 密钥：
+
+1. 当生成 JWT 字符串的时候，需要使用 secret 密钥对用户的信息进行加密，最终得到加密好的 JWT 字符串
+2. 当把 JWT 字符串解析还原成 JSON 对象的时候，需要使用 secret 密钥进行解密
+
+```js
+//定义 secret 密钥，建议将密钥命名为 secretKey
+const secretKey = 'itheima No1 ^_^'
+```
+
+### 7.6.4**在登录成功后生成** **JWT** **字符串**
+
+调用 **jsonwebtoken** 包提供的 **sign()** 方法，将用户的信息加密成 JWT 字符串，响应给客户端：
+
+```js
+// 登录接口
+app.post('/api/login', function (req, res) {
+  // 将 req.body 请求体中的数据，转存为 userinfo 常量
+  const userinfo = req.body
+  // 登录失败
+  if (userinfo.username !== 'admin' || userinfo.password !== '000000') {
+    return res.send({
+      status: 400,
+      message: '登录失败！',
+    })
+  }
+  // 登录成功
+  // TODO_03：在登录成功之后，调用 jwt.sign() 方法生成 JWT 字符串。并通过 token 属性发送给客户端
+  // 参数1：用户的信息对象
+  // 参数2：加密的秘钥
+  // 参数3：配置对象，可以配置当前 token 的有效期
+  // 记住：千万不要把密码加密到 token 字符中
+  const tokenStr = jwt.sign({ username: userinfo.username }, secretKey, { expiresIn: '30s' })
+  res.send({
+    status: 200,
+    message: '登录成功！',
+    token: tokenStr, // 要发送给客户端的 token 字符串
+  })
+})
+```
+
+### **7.6.5** **将** **JWT** **字符串还原为** **JSON** **对象**
+
+​	客户端每次在访问那些有权限接口的时候，都需要主动通过**请求头中的** **Authorization** **字段**，将 Token 字符串发送到服务器进行身份认证。
+
+此时，服务器可以通过 **express-jwt** 这个中间件，自动将客户端发送过来的 Token 解析还原成 JSON 对象：
+
+```js
+// TODO_04：注册将 JWT 字符串解析还原成 JSON 对象的中间件
+// 注意：只要配置成功了 express-jwt 这个中间件，就可以把解析出来的用户信息，挂载到 req.user 属性上
+app.use(expressJWT({ secret: secretKey }).unless({ path: [/^\/api\//] }))
+```
+
+### 7.6.6**使用** **req.user** **获取用户信息**
+
+当 express-jwt 这个中间件配置成功之后，即可在那些有权限的接口中，使用 **req.user** 对象，来访问从 JWT 字符串中解析出来的用户信息了，示例代码如下：
+
+```js
+
+// 这是一个有权限的 API 接口
+app.get('/admin/getinfo', function (req, res) {
+  // TODO_05：使用 req.user 获取用户信息，并使用 data 属性将用户信息发送给客户端
+  console.log(req.user)
+  res.send({
+    status: 200,
+    message: '获取用户信息成功！',
+    data: req.user, // 要发送给客户端的用户信息
+  })
+})
+```
+
+### 7.6.7**捕获解析** **JWT** **失败后产生的错误**
+
+​	当使用 express-jwt 解析 Token 字符串时，如果客户端发送过来的 Token 字符串**过期**或**不合法**，会产生一个**解析失败**的错误，影响项目的正常运行。我们可以通过 **Express** **的错误中间件**，捕获这个错误并进行相关的处理，示例代码如下：
+
+```js
+// TODO_06：使用全局错误处理中间件，捕获解析 JWT 失败后产生的错误
+app.use((err, req, res, next) => {
+  // 这次错误是由 token 解析失败导致的
+  if (err.name === 'UnauthorizedError') {
+    return res.send({
+      status: 401,
+      message: '无效的token',
+    })
+  }
+  res.send({
+    status: 500,
+    message: '未知的错误',
+  })
+})
 ```
 

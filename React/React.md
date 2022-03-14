@@ -196,6 +196,12 @@ let loading = ()=>{
     }
     return <div>加载完成</div>
 }
+const dv=(<div>{loading()}</div>)
+
+ReactDOM.render(
+  dv,
+  document.getElementById('root')
+);
 ```
 
 可以发现，写JSX的条件渲染与我们之前编写代码的逻辑是差不多的，根据不同的判断逻辑，返回不同的 JSX结构，然后渲染到页面中
@@ -549,7 +555,7 @@ export default class extends React.Component {
             count : 0
         }
     }
-    // 第二种初始化方式
+    // 第二种初始化方式(简化语法)
     state = {
         count:1
     }
@@ -619,7 +625,7 @@ export default class extends React.Component {
 
 ### 6.2利用bind方法（★★★）
 
-利用原型bind方法是可以更改函数里面this的指向的，所以我们可以在构造中调用bind方法，然后把返回的值赋值给我们的函数即可
+​	利用原型bind方法是可以更改函数里面this的指向的，所以我们可以在构造中调用bind方法，然后把返回的值赋值给我们的函数即可
 
 ```react
 class App extends React.Component {

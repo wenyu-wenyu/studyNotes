@@ -2796,6 +2796,21 @@ let ary = [1, 5, 10, 15];let index = ary.findIndex((value, index) => value > 9);
 [1, 2, 3].includes(2) // true [1, 2, 3].includes(4) // false
 ```
 
+#### map() 方法
+
+创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+
+```
+let arr=[4,7,8]
+const arrMap=]arr.map(x=>x*2)
+console.log(arrMap)
+
+//打印结果为
+[8,14,16]
+```
+
+
+
 ### String 的扩展方法
 
 #### 模板字符串（★★★）
