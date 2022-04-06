@@ -1619,7 +1619,7 @@ console.log(zxy)
 
 ![](img\day2images\img8.png)如果未设置constructor属性,如图:
 
-![](H:\新建文件夹\黑马最新前端在线就业班配套课件和资料 软件\黑马最新前端在线就业班配套课件和资料 软件\阶段三：JavaScript 网页编程资料\05-JavaScript高级资料\04-JavaScript高级资料\JavaScript 高级_day02（3-6小节）\4-笔记\images\img9.png)
+![](img\day2images\img9.png)
 
 ### 1.7原型链
 
@@ -2213,25 +2213,83 @@ JavaScript 除了提供正常模式外，还提供了严格模式（strict mode�
 1. 利用闭包的方式得到当前li 的索引号
 
 ```js
-for (var i = 0; i < lis.length; i++) {// 利用for循环创建了4个立即执行函数// 立即执行函数也成为小闭包因为立即执行函数里面的任何一个函数都可以使用它的i这变量(function(i) {    lis[i].onclick = function() {      console.log(i);    } })(i);}
+for (var i = 0; i < lis.length; i++) {
+  // 利用for循环创建了4个立即执行函数
+  // 立即执行函数也成为小闭包因为立即执行函数里面的任何一个函数都可以使用它的i这变量
+  (function (i) {
+    lis[i].onclick = function () {
+      console.log(i);
+    }
+  })(i);
+} 
 ```
 
 2. 闭包应用-3秒钟之后,打印所有li元素的内容
 
 ```js
- for (var i = 0; i < lis.length; i++) {   (function(i) {     setTimeout(function() {     console.log(lis[i].innerHTML);     }, 3000)   })(i);}
+ for (var i = 0; i < lis.length; i++) {
+  (function (i) {
+    setTimeout(function () {
+      console.log(lis[i].innerHTML);
+    }, 3000)
+  })(i);
+}
 ```
 
 3. 闭包应用-计算打车价格 
 
 ```js
-/*需求分析打车起步价13(3公里内),  之后每多一公里增加 5块钱.  用户输入公里数就可以计算打车价格如果有拥堵情况,总价格多收取10块钱拥堵费*/ var car = (function() {     var start = 13; // 起步价  局部变量     var total = 0; // 总价  局部变量     return {       // 正常的总价       price: function(n) {         if (n <= 3) {           total = start;         } else {           total = start + (n - 3) * 5         }         return total;       },       // 拥堵之后的费用       yd: function(flag) {         return flag ? total + 10 : total;       }	} })();console.log(car.price(5)); // 23console.log(car.yd(true)); // 33
+/*需求分析打车起步价13(3公里内), 之后每多一公里增加 5块钱. 用户输入公里数就可以计算打车价格如果有拥堵情况,总价格多收取10块钱拥堵费*/
+var car = (function () {
+  var start = 13;
+  // 起步价  局部变量     
+  var total = 0;
+  // 总价  局部变量     
+  return {
+    // 正常的总价       
+    price: function (n) {
+      if (n <= 3) {
+        total = start;
+      }
+      else {
+        total = start + (n - 3) * 5
+      }
+      return total;
+    },
+    // 拥堵之后的费用       
+    yd: function (flag) {
+      return flag ? total + 10 : total;
+    }
+  }
+})();
+console.log(car.price(5)); // 23console.log(car.yd(true)); // 33
 ```
 
 ### 5.5案例
 
 ```js
- var name = "The Window";   var object = {     name: "My Object",     getNameFunc: function() {     return function() {     return this.name;     };   } };console.log(object.getNameFunc()())-----------------------------------------------------------------------------------var name = "The Window";　　  var object = {　　　　    name: "My Object",    getNameFunc: function() {    var that = this;    return function() {    return that.name;    };  }};console.log(object.getNameFunc()())       
+var name = "The Window";
+var object = {
+  name: "My Object",
+  getNameFunc: function () {
+    return function () {
+      return this.name;
+    };
+  }
+};
+console.log(object.getNameFunc()())
+-----------------------------------------------------------------------------------
+var name = "The Window";
+var object = {
+  name: "My Object",
+  getNameFunc: function () {
+    var that = this;
+    return function () {
+      return that.name;
+    };
+  }
+};
+console.log(object.getNameFunc()())       
 ```
 
 ## 6.递归
@@ -2671,7 +2729,25 @@ ES6中允许从数组中提取值，按照对应位置，对变量赋值，对�
 #### 对象解构
 
 ```javascript
- let person = { name: 'zhangsan', age: 20 };  let { name, age } = person; console.log(name); // 'zhangsan'  console.log(age); // 20 let {name: myName, age: myAge} = person; // myName myAge 属于别名 console.log(myName); // 'zhangsan'  console.log(myAge); // 20
+let person = { name: 'zhangsan', age: 20 };  
+let { name, age } = person; 
+console.log(name); // 'zhangsan'  console.log(age); 
+//
+let {name: myName, age: myAge} = person; // myName myAge 属于别名 console.log(myName); // 'zhangsan'  console.log(myAge); // 20
+```
+
+#### 连续解构赋值+重命名
+
+```js
+let list={a:{b:{c:1}}}
+let {a:{b:{c}}}=list
+console.log(c);//1
+
+解构赋值+重命名
+let obj = {a:{b:1}}
+const {a} = obj; //传统解构赋值
+const {a:{b}} = obj; //连续解构赋值
+const {a:{b:value}} = obj; //连续解构赋值+重命名
 ```
 
 #### 小结
@@ -2686,7 +2762,9 @@ ES6中允许从数组中提取值，按照对应位置，对变量赋值，对�
 ES6中新增的定义函数的方式。
 
 ```javascript
-() => {} //()：代表是函数； =>：必须要的符号，指向哪一个代码块；{}：函数体const fn = () => {}//代表把一个函数赋值给fn
+() => {} //()：代表是函数； 
+ =>：必须要的符号，指向哪一个代码块；
+{}：函数体const fn = () => {}//代表把一个函数赋值给fn
 ```
 
 函数体中只有一句代码，且代码的执行结果就是返回值，可以省略大括号
@@ -2705,6 +2783,13 @@ ES6中新增的定义函数的方式。
 
 ```javascript
 const obj = { name: '张三'}  function fn () {      console.log(this);//this 指向 是obj对象     return () => {          console.log(this);//this 指向 的是箭头函数定义的位置，那么这个箭头函数定义在fn里面，而这个fn指向是的obj对象，所以这个this也指向是obj对象     }  }  const resFn = fn.call(obj);  resFn();
+```
+
+箭头函数返回对象简写
+
+```
+obj=b=>({data:b})
+console.log(obj(8))//输出结果{data:8}
 ```
 
 #### 小结
@@ -2761,13 +2846,17 @@ let oDivs = document.getElementsByTagName('div'); oDivs = [...oDivs];
 将伪数组或可遍历对象转换为真正的数组
 
 ```javascript
-//定义一个集合let arrayLike = {    '0': 'a',    '1': 'b',    '2': 'c',    length: 3}; //转成数组let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
+//定义一个集合
+let arrayLike = { '0': 'a', '1': 'b', '2': 'c', length: 3 };
+//转成数组
+let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
 ```
 
 方法还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组
 
 ```javascript
- let arrayLike = {      "0": 1,     "1": 2,     "length": 2 } let newAry = Array.from(arrayLike, item => item *2)//[2,4]
+let arrayLike = { "0": 1, "1": 2, "length": 2 }
+let newAry = Array.from(arrayLike, item => item * 2)//[2,4]
 ```
 
 注意：如果是对象，那么属性需要写对应的索引
@@ -2777,7 +2866,10 @@ let oDivs = document.getElementsByTagName('div'); oDivs = [...oDivs];
 用于找出第一个符合条件的数组成员，如果没有找到返回undefined
 
 ```javascript
-let ary = [{     id: 1,     name: '张三' }, {      id: 2,     name: '李四' }];  let target = ary.find((item, index) => item.id == 2);//找数组里面符合条件的值，当数组中元素id等于2的查找出来，注意，只会匹配第一个
+let ary = [
+  { id: 1, name: '张三' },
+  { id: 2, name: '李四' }];
+let target = ary.find((item, index) => item.id == 2);//找数组里面符合条件的值，当数组中元素id等于2的查找出来，注意，只会匹配第一个
 ```
 
 #### 实例方法：findIndex()
@@ -2785,7 +2877,9 @@ let ary = [{     id: 1,     name: '张三' }, {      id: 2,     name: '李四' }
 用于找出第一个符合条件的数组成员的位置，如果没有找到返回-1
 
 ```javascript
-let ary = [1, 5, 10, 15];let index = ary.findIndex((value, index) => value > 9); console.log(index); // 2
+let ary = [1, 5, 10, 15];
+let index = ary.findIndex((value, index) => value > 9); 
+console.log(index); // 2
 ```
 
 #### 实例方法：includes()
@@ -2800,11 +2894,10 @@ let ary = [1, 5, 10, 15];let index = ary.findIndex((value, index) => value > 9);
 
 创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
 
-```
+```js
 let arr=[4,7,8]
 const arrMap=]arr.map(x=>x*2)
 console.log(arrMap)
-
 //打印结果为
 [8,14,16]
 ```
@@ -2880,7 +2973,11 @@ const set = new Set([1, 2, 3, 4, 4]);//{1, 2, 3, 4}
 - clear()：清除所有成员，没有返回值
 
 ```javascript
- const s = new Set(); s.add(1).add(2).add(3); //   s.delete(2)             // 删除 set 结构中的2值    s.has(1)                // 表示 set 结构中是否有1这个值 返回布尔值  s.clear()               // 清除 set 结构中的所有值 //注意：删除的是元素的值，不是代表的索引
+const s = new Set(); 
+s.add(1).add(2).add(3); //  表示向set结构中添加1，2,3 
+s.delete(2) // 删除 set 结构中的2值    
+s.has(1)// 表示 set 结构中是否有1这个值 返回布尔值  
+s.clear() // 清除 set 结构中的所有值 //注意：删除的是元素的值，不是代表的索引
 ```
 
 #### 遍历

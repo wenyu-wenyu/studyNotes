@@ -288,7 +288,7 @@ $.post(
 
 -  使用PostMan测试POST接口
 
-![](J:\学习笔记\study-notes\Ajax\images\2022-02-28_182157.png)
+![](images\2022-02-28_182157.png)
 
 **步骤：**
 
@@ -1219,7 +1219,7 @@ var json = '{"a": "Hello", "b": "World"}'
 ###### 2.3.6序列化和反序列化
 
 - **把数据对象转换为字符串的过程，叫做序列化，例如：调用 JSON.stringify() 函数的操作，叫做 JSON 序列化。**
-- **把字符串转换为数据对象的过程，叫做反序列化，例如：调用 JSON.parse() 函数的操作，叫做 JSON 反序列化
+- **把字符串转换为数据对象的过程，叫做反序列化，例如：调用 JSON.parse() 函数的操作，叫做 JSON 反序列化**
 
 ### 3.封装自己的Ajax函数
 
@@ -1421,7 +1421,7 @@ xhr.ontimeout = function(event){
 
    4. 使用 xhr 发起上传文件的请求
 
-      ```
+      ```js
       // 1. 创建 xhr 对象
        var xhr = new XMLHttpRequest()
        // 2. 调用 open 函数，指定请求类型与URL地址。其中，请求类型必须为 POST
